@@ -15,10 +15,6 @@ bosh -e vbox update-cloud-config iaas-support/bosh-lite/cloud-config.yml
 cd ~/workspace
 bosh -e vbox update-runtime-config <(bosh int bosh-deployment/runtime-configs/dns.yml --vars-store deployment-vars.yml) --name dns
 
-#pushd operations/experimental/
-#wget https://raw.githubusercontent.com/rrainey/cf-local-tools/master/cf-deployment/operations/experimental/trust-route-ca.yml
-#popd
-
 cd cf-deployment
 
 bosh -e vbox -d cf deploy cf-deployment.yml \
